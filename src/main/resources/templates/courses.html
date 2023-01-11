@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список курсов</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="script.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1 class="title">Агрегатор онлайн курсов</h1>
+        <input onchange="submit()" class="main_input" id="search" type="text" placeholder="Поиск по курсам">
+    </div>
+    <div class="section">
+        <div class="section_filter">
+            <div class="return">
+                <a class="return_button" href="#">Вернуться</a>
+            </div>
+            <div class="filter">
+                <div class="selector">
+                    <select onchange="submit()" id="category_select" class="selector_select">
+                        <option disabled selected>Категория</option>
+                        <option>Программирование</option>
+                        <option>Дизайн</option>
+                        <option>Аналитика</option>
+                        <option>Менеджмент</option>
+                        <option>Английский</option>
+                    </select>
+                </div>
+                <div class="selector school_padding">
+                    <select onchange="submit()" id="school_select" class="selector_select">
+                        <option disabled selected>Школа</option>
+                        <option>Stepik</option>
+                        <option>HTML Academy</option>
+                        <option>Яндекс Практикум</option>
+                        <option>GeekBrains</option>
+                        <option>Нетология</option>
+                        <option>SkillFactory</option>
+                        <option>XYZ School</option>
+                        <option>Skillbox</option>
+                        <option>Skypro</option>
+                        <option>Бруноям</option>
+                        <option>Другие</option>
+                    </select>
+                </div>
+                <div class="selector">
+                    <select class="selector_select">
+                        <option disabled selected>Стоимость</option>
+                        <option>Бесплатно</option>
+                        <option>До 10 тыс.</option>
+                        <option>От 10 до 20 тыс.</option>
+                        <option>От 20 до 50 тыс.</option>
+                        <option>От 50 тыс.</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <p class="title">Каталог всех курсов</p>
+        <div id="courses" class="list_container" th:each="course: ${courses}">
+            <div class="courses_element">
+                <div class="right_place">
+                    <div class="course_name_block">
+                        <a class="course_name" target="_blank" th:href="${course.url}" th:text="${course.name}"/>
+                    </div>
+                    <div class="school">
+                        <img class="school_logo" th:src="${course.photo}" th:alt="${course.school}">
+                        <p class="school_name" th:text="${course.school}"/>
+                    </div>
+                </div>
+                <div class="left_place">
+                    <div class="top_part">
+                        <span class="duration_cost">Продолжительность: </span>
+                        <span class="duration_cost_value" th:text="${course.duration}"/>
+                    </div>
+                    <div class="bottom_part">
+                        <span class="duration_cost">Стоимость: </span>
+                        <span class="duration_cost_value"th:text="${course.cost}+' &#8381'"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+
+    </footer>
+</div>
+</body>
+</html>

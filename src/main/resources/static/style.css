@@ -1,0 +1,196 @@
+/*@font-face {*/
+/*	font-family: 'Jura';*/
+/*	src: url('./fonts/Jura-Light.ttf') format('truetype');*/
+/*	font-weight: 300;*/
+/*	font-style: normal;*/
+/*}*/
+/*@font-face {*/
+/*	font-family: 'Jura';*/
+/*	src: url('./fonts/Jura-Regular.ttf') format('truetype');*/
+/*	font-weight: 400;*/
+/*	font-style: normal;*/
+/*}*/
+/*@font-face {*/
+/*	font-family: 'Jura';*/
+/*	src: url('./fonts/Jura-Medium.ttf') format('truetype');*/
+/*	font-weight: 500;*/
+/*	font-style: normal;*/
+/*}*/
+/*@font-face {*/
+/*	font-family: 'Jura';*/
+/*	src: url('./fonts/Jura-SemiBold.ttf') format('truetype');*/
+/*	font-weight: 600;*/
+/*	font-style: normal;*/
+/*}*/
+/*@font-face {*/
+/*	font-family: 'Jura';*/
+/*	src: url('./fonts/Jura-Bold.ttf') format('truetype');*/
+/*	font-weight: 700;*/
+/*	font-style: normal;*/
+/*}*/
+
+*{
+    margin: 0;
+    padding: 0;
+    color: black;
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: Jura;
+}
+
+body{
+    max-width: 1200px;
+    margin: 0px auto;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 0 15px;
+    margin-top: 24px;
+}
+
+.title{
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+.header{
+    padding-bottom: 35px;
+    border-bottom: 1px solid ;
+    margin-bottom: 47px;
+}
+
+.main_input{
+    width: 520px;
+    height: 50px;
+    border: 2px solid;
+    border-radius: 15px;
+    padding: 0 10px;
+}
+
+.main_input:hover{
+    border: 2px solid rgb(20, 220, 190);
+}
+
+.section_filter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 47px;
+}
+
+.filter{
+    display: flex;
+}
+
+.return{
+    position: relative;
+    padding-left: 35px;
+}
+
+.return_button{
+    font-weight: 700;
+}
+
+.return_button:hover{
+    font-size: 19px;
+}
+
+.return::before{
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 14px;
+    top: 25%;
+    left: 0;
+    background-image: url('./img/back.svg');
+}
+
+.selector_select{
+    width: 170px;
+    height: 50px;
+    border-radius: 15px;
+    border: 2px solid;
+    padding: 0 10px;
+}
+
+.selector_select:hover{
+    border: 2px solid rgb(20, 220, 190);
+}
+
+.selector_duration{
+    width: 320px;
+}
+
+.school_padding{
+    padding: 0 45px;
+}
+
+.list_container{
+    max-width: 1100px;
+    margin: 0px auto;
+}
+
+.courses_element{
+    width: 1100px;
+    border: 2px solid;
+    border-radius: 15px;
+    margin-bottom: 35px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.school{
+    display: flex;
+    align-items: center;
+}
+
+.school_logo{
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+.right_place{
+    width: 50%;
+}
+
+.course_name{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.course_name:hover{
+    color: rgb(20, 220, 190);
+}
+
+.course_name_block{
+    margin-bottom: 16px;
+}
+
+.left_place{
+    width: 45%;
+}
+
+.top_part{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.duration_cost_value{
+    font-weight: 700;
+}
+
+.hide{
+    display: none;
+}
