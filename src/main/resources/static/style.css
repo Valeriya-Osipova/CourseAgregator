@@ -49,6 +49,13 @@ body{
     box-sizing: border-box;
 }
 
+button {
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
 .container{
     max-width: 1200px;
     margin: 0px auto;
@@ -68,6 +75,19 @@ body{
     margin-bottom: 47px;
 }
 
+.top_main{
+    display: flex;
+    justify-content: space-between;
+}
+
+.login_button{
+    margin-top: 20px;
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: lightgray;
+}
+
 .main_input{
     width: 520px;
     height: 50px;
@@ -82,7 +102,7 @@ body{
 
 .section_filter{
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
     margin-bottom: 47px;
 }
@@ -182,9 +202,8 @@ body{
     width: 45%;
 }
 
-.top_part{
-    margin-top: 10px;
-    margin-bottom: 30px;
+.middle_part{
+    margin: 20px 0;
 }
 
 .duration_cost_value{

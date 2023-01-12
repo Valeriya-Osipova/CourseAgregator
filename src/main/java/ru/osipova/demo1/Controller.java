@@ -60,15 +60,41 @@ public class Controller {
                 }
             }
             if (category != null){
-                if (!course.getCategory().toLowerCase().equals(category.toLowerCase())){
+                if (!course.getCategory().toLowerCase().contains(category.toLowerCase())){
 //                    add = false;
                     continue;
                 }
             }
             if (school != null){
-                if (!course.getSchool().toLowerCase().equals(school.toLowerCase())){
+                if (!course.getSchool().toLowerCase().contains(school.toLowerCase())){
 //                    add = false;
                     continue;
+                }
+            }
+            if (cost != null){
+
+                switch (cost){
+                    case 0:
+                        System.out.println(Integer.parseInt(course.getCost()));
+                        if (Integer.parseInt(course.getCost()) != 0){
+                            continue;
+                        } break;
+                    case 1:
+                        if (Integer.parseInt(course.getCost()) >= 10000 || Integer.parseInt(course.getCost()) == 0){
+                            continue;
+                        } break;
+                    case 2:
+                        if (Integer.parseInt(course.getCost()) >= 20000 || Integer.parseInt(course.getCost()) < 10000){
+                            continue;
+                        }break;
+                    case 3:
+                        if (Integer.parseInt(course.getCost()) >= 50000 || Integer.parseInt(course.getCost()) < 20000){
+                            continue;
+                        }break;
+                    case 4:
+                        if (Integer.parseInt(course.getCost()) < 50000){
+                            continue;
+                        } break;
                 }
             }
 //            if (add){
