@@ -12,7 +12,7 @@
     <div class="header">
         <div class="top_main">
             <h1 class="title">Агрегатор онлайн курсов</h1>
-            <button id="login" class="login_button">Войти</button>
+            <a href="#"><button id="login" class="login_button">Войти</button></a>
         </div>
         <input onchange="submit()" class="main_input" id="search" type="text" placeholder="Поиск по курсам">
     </div>
@@ -42,7 +42,7 @@
                         <option>Skillbox</option>
                         <option>Skypro</option>
                         <option>Бруноям</option>
-                        <option>Другие</option>
+                        <option>Contented</option>
                     </select>
                 </div>
                 <div class="selector">
@@ -75,13 +75,20 @@
                         <span class="duration_cost_value" th:text="${course.duration}"/>
                     </div>
                     <div class="middle_part">
-                        <span class="duration_cost">Оценка: </span>
-                        <span class="duration_cost_value" th:text="${course.duration}"/>
+                        <span class="duration_cost">Оценка пользователей: </span>
+                        <span class="duration_cost_value"/>0</span>
+                        <!--                        <span th:if="${course.cost==0}" class="duration_cost_value" th:text="${'не оценено'}"/>-->
+                        <!--                        <span th:unless="${course.cost==0}" class="duration_cost_value" th:text="${course.cost}"/>-->
                     </div>
                     <div class="bottom_part">
                         <span class="duration_cost">Стоимость: </span>
                         <span class="duration_cost_value"th:text="${course.cost}+' &#8381'"/>
                     </div>
+                </div>
+                <div class="feedback">
+                    <a href="../../../../../CourseAgregator1/src/main/resources/templates/feedback.html">
+                        <button class="give_feedback">Оставить отзыв</button>
+                    </a>
                 </div>
             </div>
         </div>

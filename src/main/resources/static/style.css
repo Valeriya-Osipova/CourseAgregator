@@ -84,8 +84,12 @@ button {
     margin-top: 20px;
     width: 60px;
     height: 30px;
-    border-radius: 5px;
-    background-color: lightgray;
+    border: 0;
+    text-decoration: underline;
+}
+
+.login_button:hover{
+    color: grey;
 }
 
 .main_input{
@@ -109,6 +113,7 @@ button {
 
 .filter{
     display: flex;
+    position: relative;
 }
 
 .return{
@@ -131,7 +136,7 @@ button {
     height: 14px;
     top: 25%;
     left: 0;
-    background-image: url('./img/back.svg');
+    background-image: url('../templates/img/back.svg');
 }
 
 .selector_select{
@@ -185,6 +190,23 @@ button {
     width: 50%;
 }
 
+.feedback{
+    display: flex;
+    align-items: end;
+}
+
+.give_feedback{
+    padding: 5px;
+    color: white;
+    border: 0;
+    background-color: #444444;
+    border-radius: 5px;
+}
+
+.give_feedback:hover{
+    background-color: #565656;
+}
+
 .course_name{
     font-size: 24px;
     font-weight: 600;
@@ -198,10 +220,6 @@ button {
     margin-bottom: 16px;
 }
 
-.left_place{
-    width: 45%;
-}
-
 .middle_part{
     margin: 20px 0;
 }
@@ -212,4 +230,9 @@ button {
 
 .hide{
     display: none;
+}
+
+footer{
+    border-top: 1px solid black;
+    padding: 30px;
 }

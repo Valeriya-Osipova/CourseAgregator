@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Оставить отзыв</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="script.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <form action="#">
+        <input type="radio" id="ex" name="Rating" value="5">
+        <label for="ex">Отлично</label><br>
+        <input type="radio" id="good" name="Rating" value="4">
+        <label for="good">Хорошо</label><br>
+        <input type="radio" id="normal" name="Rating" value="3">
+        <label for="normal">JavaScript</label>
+        <input type="radio" id="bad" name="Rating" value="2">
+        <label for="bad">Плохо</label><br>
+        <input type="radio" id="terrible" name="Rating" value="1">
+        <label for="terrible">Ужасно</label>
+        <input type="submit" value="Отправить">
+    </form>
+<!--    <form action="#" th:action="@{/feedback+'${}'}" th:object="${feedback}" method="post">-->
+<!--        <input type="text" th:field="*{mark}" />-->
+<!--    </form>-->
+</div>
+</body>
+</html>

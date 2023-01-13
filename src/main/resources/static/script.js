@@ -35,10 +35,19 @@ async function submit() {
             '<span class="duration_cost">' + 'Продолжительность: ' + '</span>' +
             '<span class="duration_cost_value">' + course['duration'] + '</span>' +
             '</div>' +
+            '<div class="middle_part">'+
+            '<span class="duration_cost">'+'Оценка пользователей: '+ '</span>'+
+            '<span class="duration_cost_value"/>'+ '0'+ '</span>'+
+            '</div>'+
             '<div class="bottom_part">' +
             '<span class="duration_cost">' + 'Стоимость: ' + '</span>' +
-            '<span class="duration_cost_value">' + course['cost'] + ' &#8381 </span>' +
+            '<span class="duration_cost_value">' + course['cost'] + ' &#8381' + '</span>' +
             '</div>' +
+            '</div>' +
+            '<div class="feedback">'+
+            '<a href="feedback.html">'+
+            '<button class="give_feedback">'+'Оставить отзыв'+'</button>'+
+            '</a>'+
             '</div>' +
             '</div>'
     });
