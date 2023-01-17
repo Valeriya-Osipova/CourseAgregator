@@ -1,19 +1,16 @@
-
 async function submit() {
     let params = {}
     let school = document.getElementById('school_select').value;
-    if (school !== 'Школа') params['school'] = school
+    if (school != 'Школа') params['school'] = school
     let category = document.getElementById('category_select').value;
-    if (category !== 'Категория') params['category'] = category;
-    let cost = document.getElementById('cost_select').value;
-    if (cost !== 'Стоимость') params['cost'] = cost;
+    if (category != 'Категория') params['category'] = category;
     let name = document.getElementById('search').value;
     params['name'] = name;
     let url = '/newSearch?' + new URLSearchParams(params).toString()
     let response = await fetch(url);
     let json = await response.json();
     console.log(json);
-    if (json.length === 0) alert("Не найдено");
+    if (json.length == 0) alert("Не найдено");
     let elems = document.getElementsByClassName("courses_element");
     while (elems.length !== 0){
         elems[0].remove()
@@ -35,20 +32,22 @@ async function submit() {
             '<span class="duration_cost">' + 'Продолжительность: ' + '</span>' +
             '<span class="duration_cost_value">' + course['duration'] + '</span>' +
             '</div>' +
-            '<div class="middle_part">'+
-            '<span class="duration_cost">'+'Оценка пользователей: '+ '</span>'+
-            '<span class="duration_cost_value"/>'+ '0'+ '</span>'+
-            '</div>'+
+            '<div id="rate" class="middle_part">'+
+                '<span class="duration_cost">'+'Оценка пользователей:'+' </span>'+
+                '<span class="duration_cost_value">'+ course['mark'] +'</span>'+
+            '</div>' +
             '<div class="bottom_part">' +
             '<span class="duration_cost">' + 'Стоимость: ' + '</span>' +
-            '<span class="duration_cost_value">' + course['cost'] + ' &#8381' + '</span>' +
+            '<span class="duration_cost_value">' + course['cost'] + ' &#8381 </span>' +
             '</div>' +
             '</div>' +
             '<div class="feedback">'+
-            '<a href="feedback.html">'+
-            '<button class="give_feedback">'+'Оставить отзыв'+'</button>'+
-            '</a>'+
-            '</div>' +
+                '<a href="'+'feedback/' + course['id'] + '" >' +
+                    '<button class="give_feedback">Оставить отзыв</button>'+
+                '</a>'+
+            '</div>'+
             '</div>'
     });
+
+    let html = ``;
 }

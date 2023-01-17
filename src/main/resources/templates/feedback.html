@@ -9,22 +9,25 @@
 </head>
 <body>
 <div class="container">
-    <form action="#">
-        <input type="radio" id="ex" name="Rating" value="5">
-        <label for="ex">Отлично</label><br>
-        <input type="radio" id="good" name="Rating" value="4">
-        <label for="good">Хорошо</label><br>
-        <input type="radio" id="normal" name="Rating" value="3">
-        <label for="normal">JavaScript</label>
-        <input type="radio" id="bad" name="Rating" value="2">
-        <label for="bad">Плохо</label><br>
-        <input type="radio" id="terrible" name="Rating" value="1">
-        <label for="terrible">Ужасно</label>
-        <input type="submit" value="Отправить">
-    </form>
-<!--    <form action="#" th:action="@{/feedback+'${}'}" th:object="${feedback}" method="post">-->
-<!--        <input type="text" th:field="*{mark}" />-->
+<!--    <form action="#">-->
+<!--        <input type="radio" id="ex" name="Rating" value="5">-->
+<!--        <label for="ex">Отлично</label><br>-->
+<!--        <input type="radio" id="good" name="Rating" value="4">-->
+<!--        <label for="good">Хорошо</label><br>-->
+<!--        <input type="radio" id="normal" name="Rating" value="3">-->
+<!--        <label for="normal">JavaScript</label>-->
+<!--        <input type="radio" id="bad" name="Rating" value="2">-->
+<!--        <label for="bad">Плохо</label><br>-->
+<!--        <input type="radio" id="terrible" name="Rating" value="1">-->
+<!--        <label for="terrible">Ужасно</label>-->
+<!--        <input type="submit" value="Отправить">-->
 <!--    </form>-->
+    <!--"-->
+    <form action="#" th:action="@{/feedback/}+${id}"  th:object="${feedback}" method="post">
+        <input type="number" max=5 min=1 th:field="${feedback.mark}" />
+        <input type="text" maxlength="255" th:field="${feedback.text}" />
+        <input type="submit"  />
+    </form>
 </div>
 </body>
 </html>

@@ -129,16 +129,6 @@ button {
     font-size: 19px;
 }
 
-.return::before{
-    content: '';
-    position: absolute;
-    width: 28px;
-    height: 14px;
-    top: 25%;
-    left: 0;
-    background-image: url('../templates/img/back.svg');
-}
-
 .selector_select{
     width: 170px;
     height: 50px;
@@ -199,17 +189,21 @@ button {
     padding: 5px;
     color: white;
     border: 0;
-    background-color: #444444;
+    background-color: rgba(68, 68, 68, 0.76);
     border-radius: 5px;
 }
 
 .give_feedback:hover{
-    background-color: #565656;
+    background-color: #494949;
 }
 
 .course_name{
     font-size: 24px;
     font-weight: 600;
+}
+
+.course_name_block{
+    max-width: 490px;
 }
 
 .course_name:hover{
