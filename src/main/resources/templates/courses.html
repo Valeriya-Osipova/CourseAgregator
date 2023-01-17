@@ -40,16 +40,17 @@
                         <option>Skypro</option>
                         <option>Бруноям</option>
                         <option>Skyeng</option>
+                        <option>Contented</option>
                     </select>
                 </div>
                 <div class="selector">
-                    <select class="selector_select">
+                    <select onchange="submit()" id="cost_select" class="selector_select">
                         <option disabled selected>Стоимость</option>
-                        <option>Бесплатно</option>
-                        <option>До 10 тыс.</option>
-                        <option>От 10 до 20 тыс.</option>
-                        <option>От 20 до 50 тыс.</option>
-                        <option>От 50 тыс.</option>
+                        <option value=0>Бесплатно</option>
+                        <option value=1>До 10 тыс.</option>
+                        <option value=2>От 10 до 20 тыс.</option>
+                        <option value=3>От 20 до 50 тыс.</option>
+                        <option value=4>От 50 тыс.</option>
                     </select>
                 </div>
             </div>

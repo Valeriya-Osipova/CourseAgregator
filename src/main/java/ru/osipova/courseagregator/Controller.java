@@ -86,25 +86,55 @@ public class Controller {
         List<Course> src = courseRepository.findAll();
         List<Course> result = new ArrayList<>();
         for (Course course : src) {
+//            boolean add = true;
             if (name != null){
                 if (!course.getName().toLowerCase().contains(name.toLowerCase())){
+//                    add = false;
                     continue;
                 }
             }
             if (category != null){
                 if (!course.getCategory().toLowerCase().contains(category.toLowerCase())){
+//                    add = false;
                     continue;
                 }
             }
             if (school != null){
                 if (!course.getSchool().toLowerCase().contains(school.toLowerCase())){
+//                    add = false;
                     continue;
+                }
+            }
+            if (cost != null){
+
+                switch (cost){
+                    case 0:
+                        System.out.println(Integer.parseInt(course.getCost()));
+                        if (Integer.parseInt(course.getCost()) != 0){
+                            continue;
+                        } break;
+                    case 1:
+                        if (Integer.parseInt(course.getCost()) >= 10000 || Integer.parseInt(course.getCost()) == 0){
+                            continue;
+                        } break;
+                    case 2:
+                        if (Integer.parseInt(course.getCost()) >= 20000 || Integer.parseInt(course.getCost()) < 10000){
+                            continue;
+                        }break;
+                    case 3:
+                        if (Integer.parseInt(course.getCost()) >= 50000 || Integer.parseInt(course.getCost()) < 20000){
+                            continue;
+                        }break;
+                    case 4:
+                        if (Integer.parseInt(course.getCost()) < 50000){
+                            continue;
+                        } break;
                 }
             }
             result.add(course);
         }
 
-        return getCoursesWithMarks(result);
+        return result;
     }
 
     public List<Course> getCoursesWithMarks(List<Course> list){

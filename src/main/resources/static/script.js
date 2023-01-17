@@ -1,9 +1,11 @@
 async function submit() {
     let params = {}
     let school = document.getElementById('school_select').value;
-    if (school != 'Школа') params['school'] = school
+    if (school != 'Школа') params['school'] = school;
     let category = document.getElementById('category_select').value;
     if (category != 'Категория') params['category'] = category;
+    let cost = document.getElementById('cost_select').value;
+    if (cost !== 'Стоимость') params['cost'] = cost;
     let name = document.getElementById('search').value;
     params['name'] = name;
     let url = '/newSearch?' + new URLSearchParams(params).toString()
@@ -33,8 +35,8 @@ async function submit() {
             '<span class="duration_cost_value">' + course['duration'] + '</span>' +
             '</div>' +
             '<div id="rate" class="middle_part">'+
-                '<span class="duration_cost">'+'Оценка пользователей:'+' </span>'+
-                '<span class="duration_cost_value">'+ course['mark'] +'</span>'+
+            '<span class="duration_cost">'+'Оценка пользователей:'+' </span>'+
+            '<span class="duration_cost_value">'+ course['mark'] +'</span>'+
             '</div>' +
             '<div class="bottom_part">' +
             '<span class="duration_cost">' + 'Стоимость: ' + '</span>' +
@@ -42,9 +44,9 @@ async function submit() {
             '</div>' +
             '</div>' +
             '<div class="feedback">'+
-                '<a href="'+'feedback/' + course['id'] + '" >' +
-                    '<button class="give_feedback">Оставить отзыв</button>'+
-                '</a>'+
+            '<a href="'+'feedback/' + course['id'] + '" >' +
+            '<button class="give_feedback">Оставить отзыв</button>'+
+            '</a>'+
             '</div>'+
             '</div>'
     });
